@@ -1,4 +1,4 @@
-# Components reference
+# Components
 
 ## What is a component
 
@@ -27,6 +27,21 @@ components
     └── template.html
 ```
 __\_\_main\_\___ is compulsory and __404__ is recommended
+
+Every component has to have a __template__ and a __script__.
+
+It is exepected by the framework that the backend respect this static discipline :
+
+A POST request at '/comp' as such : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error if the component is not found, or a component as follows :
+
+```JSON
+  {
+    "name": "componentName",
+    "template": "<div name='componentName'> ... component template ... </div>",
+    "script": "(function () { ... component script ... })",
+    "restricted": false
+  }
+```
 
 ### template.html
 
@@ -57,10 +72,10 @@ Every script is as such
 })
 ```
 
-## Doorman inner data representations
+## The way the Doorman represents data
 
 ```javascript
-var routes =        // All the routes
+routes =        // All the routes
 {
     routeName : {
         comp : 'componentName',                     // required
@@ -73,27 +88,28 @@ var routes =        // All the routes
     // ...
 }
 
-var rawComponent =  // component as sent by the server
+rawComponent =  // component as sent by the server
 {
+    name : String,
     template : htmlString,      // Valid HTML representation of a component
     script : javascriptString,  // Valid component script
     restricted : Boolean
 }
 
-var componentInstance =
+componentInstance =
 {
     dom : DOMNode,       // dom structure parsed from the component's template
     logic : Object,      // result of the component's script after it was evaled
     restricted : Boolean
 }
 
-var routeInfo =
+routeInfo =
 {
     route : 'routeName',
     ...routes[routeName]
 }
 
-var component =     // as represented inside a doorman
+component =     // as represented inside a doorman
 {
     ...routeInfo,
     ...rawComponent,
@@ -102,9 +118,9 @@ var component =     // as represented inside a doorman
 }
 ```
 
-## Hooks
+## Component lifecycle
 
-There are two kinds of hooks
+The component has action triggers when opened and other action triggers when closed, those are called hooks, there are two kinds of hooks
 
 ### Inner hooks
 
