@@ -12,12 +12,12 @@ curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST 
 ```
 should yield either an error or this :
 ```JSON
-  {
-    "name": "componentName",
-    "template": "<div name='componentName'> ... component template ... </div>",
-    "script": "(function () { ... component script ... })",
-    "restricted": false
-  }
+{
+  "name": "componentName",
+  "template": "<div name='componentName'> ... component template ... </div>",
+  "script": "(function () { ... component script ... })",
+  "restricted": false
+}
 ```
 
 ### The template
@@ -25,13 +25,13 @@ should yield either an error or this :
 Every template is a simple html markdown, that must be encapsulated in
 ```html
 <div class='component' name='compName'>
-  <!-- content of template.html -->
+  <!-- content -->
 </div>
 ```
 
 ### The script
 
-Every script is as such
+Every script should respect this schema :
 ```javascript
 (function () {
 
@@ -45,6 +45,7 @@ Every script is as such
     return ( /* "componentInterface" that the parent component might utilize */ );
   };
 
+  // You must always return the open function
   return (open);
 })
 ```
