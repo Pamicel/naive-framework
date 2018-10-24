@@ -4,10 +4,13 @@
 
 A component is essentialy a __template__ and a __script__.
 
-To understand what these two should look like, let's see what the framework expects from the backend :
+To understand what these two should be like, let's see what the framework expects from the backend :
 
-A POST request at '/comp' like this one : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error or a component in a response exactly like this one :
-
+A POST request at '/comp' like this one : 
+```sh
+curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp
+```
+should yield either an error or this :
 ```JSON
   {
     "name": "componentName",
