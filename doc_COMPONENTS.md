@@ -68,7 +68,7 @@ The component has action triggers when opened and other action triggers when clo
 
 ### <a name="inhook"></a>Inner hooks
 
-**Inner hooks** are added to the *$hooks* object from inside the component, say like this :
+The **open** function present in all components is the mother of all inner hooks, other inner hooks are added to the **$hooks** object from inside the component, like this :
 
 ```javascript
 (function () {
@@ -106,9 +106,9 @@ or like this :
 })
 ```
 
-The only existing inner hook at the time of writing is the *close* hook : it is called right before the component is ejected from the mount.
+The only inner hook that can be added at the time of writing is the **close** hook : it is called **just before the component is ejected from the mount**.
 
-NB : the open function present in all components, is the mother of all inner hooks, the definition of a $hooks.open function is thus ignored by design.
+**NB** : the definition of a $hooks.open function is ignored by design.
 
 ### Outer hooks
 
