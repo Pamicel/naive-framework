@@ -64,7 +64,7 @@ Each component has access, inside of its script, to this set of handles :
 
 ## Component lifecycle
 
-The component has action triggers when opened and other action triggers when closed, those are called hooks, there are two kinds of hooks
+The component has **action triggers when opened and other action triggers when closed**, those are called **hooks**, there are two kinds of hooks
 
 ### <a name="inhook"></a>Inner hooks
 
@@ -158,7 +158,7 @@ There are two outer hooks : **open** (which is called just after the inner open 
 
 Parents/children communication can be hard, but not for components.
 
-Because I believed it was cleaner, children are not scoped inside their parent component. There are instead systems in place that give a parent and a child the ability to trigger actions inside one another.
+Children are not scoped inside their parent component. Instead there are systems in place that give a parent and a child the ability to pass data to one another and to trigger actions inside one another.
 
 ### <a name="emiters"></a>Emiters
 All components have a handle called `$emit` that lets them use a function that they expect the parent to give them (through `on: {...}` in the parent doorman).
