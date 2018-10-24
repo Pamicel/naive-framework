@@ -223,7 +223,7 @@ Passing data on load is a secondary way to pass functions to the child, which ca
 ### Using the child's interface
 The compulsory function `open` (which you can actually call however you want, it just has to be the only thing returned by the component script) returns an object that is the argument passed to the `doorman.load` Promise response :
 
-IDUP; (I don't understand, Paul)
+IDUP; (I don't understand, Paul)<br>
 This rather useful parent child combo will print 'hello' to the console.
 ```javascript
 // The child component
