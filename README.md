@@ -62,7 +62,7 @@ It is made of three main parts :
 And a fourth part that is a wrapper arount the Doorman utility :
   - the Router constructor.
 
-### Component Proxy
+### Components
 
 #### Prerequisite
 
@@ -167,3 +167,30 @@ component =     // as represented inside a doorman
 ### Store
 
 cf doc_STORE[...].md
+
+### A typical components folder
+
+```
+components
+├── 404
+│   ├── script.js
+│   └── template.html
+├── __main__
+│   ├── script.js
+│   └── template.html
+│
+├── name-1
+│   ├── script.js
+│   └── template.html
+├── name-2
+│   ├── script.js
+│   └── template.html
+├── name-3
+│   ├── script.js
+│   └── template.html
+...
+└── name-z
+    ├── script.js
+    └── template.html
+```
+__\_\_main\_\___ is compulsory and __404__ is recommended

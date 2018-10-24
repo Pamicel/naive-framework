@@ -2,37 +2,11 @@
 
 ## What is a component
 
-A typical components folder is as such
-```
-components
-├── 404
-│   ├── script.js
-│   └── template.html
-├── __main__
-│   ├── script.js
-│   └── template.html
-│
-├── name-1
-│   ├── script.js
-│   └── template.html
-├── name-2
-│   ├── script.js
-│   └── template.html
-├── name-3
-│   ├── script.js
-│   └── template.html
-...
-└── name-z
-    ├── script.js
-    └── template.html
-```
-__\_\_main\_\___ is compulsory and __404__ is recommended
+A component is essentialy a __template__ and a __script__.
 
-Every component has to have a __template__ and a __script__.
+To understand what these two should look like, let's see what the framework expects from the backend :
 
-It is exepected by the framework that the backend respect this static discipline :
-
-A POST request at '/comp' like this one : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error if the component is not found, or a component as follows :
+A POST request at '/comp' like this one : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error or a component in a response exactly like this one :
 
 ```JSON
   {
@@ -43,7 +17,7 @@ A POST request at '/comp' like this one : `curl -d '{"name": "componentName"}' -
   }
 ```
 
-### template.html
+### The template
 
 Every template is a simple html markdown, that must be encapsulated in
 ```html
@@ -52,7 +26,7 @@ Every template is a simple html markdown, that must be encapsulated in
 </div>
 ```
 
-### script.js
+### The script
 
 Every script is as such
 ```javascript
@@ -72,11 +46,23 @@ Every script is as such
 })
 ```
 
+## Component handles
+Each component has access, inside of its script, to this set of handles :
+  - `$` : A special query selector 'scoped' to the component's part of the dom
+  - `$mount` : The parent DOMElement of the component
+  - `$name` : The component's name
+  - `$options` : The options associated with the component's route
+  - `$emit` : The [emiters](#emiters)
+  - `$hooks` : The object on which the component can define its own [inner hooks](#inhook)
+  - `$alert` : The handle for [alerts](doc_ALERTS_how_alerts_work.md)
+  - `$router` : The access to the router (if there is one)
+  - `$store` : The component's own access to the [store](doc_STORE_how-the-store-works.md)
+
 ## Component lifecycle
 
 The component has action triggers when opened and other action triggers when closed, those are called hooks, there are two kinds of hooks
 
-### Inner hooks
+### <a name="inhook"></a>Inner hooks
 
 **Inner hooks** are added to the *$hooks* object from inside the component, say like this :
 
@@ -168,7 +154,7 @@ Parents/children communication can be hard, but not for components.
 
 Because I believed it was cleaner, children are not scoped inside their parent component. There are instead systems in place that give a parent and a child the ability to trigger actions inside one another.
 
-### Emiters
+### <a name="emiters"></a>Emiters
 All components have a handle called `$emit` that lets them use a function that they expect the parent to give them (through `on: {...}` in the parent doorman).
 
 eg :
