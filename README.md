@@ -1,13 +1,58 @@
 # The most naive framework
 
-# ⚠️  Documentation in progress ⚠️
+# ⚠️  I am currently building this small documentation ⚠️
+
+## What is a doorman
+
+A doorman is an object that deals with __inserting and changing components inside a given div__ (called a __mount__)
+
+A new doorman is instanciated like this :
+```javascript
+const dm = Doorman(
+
+  // Mount
+  $("#mount-abcd"),
+
+  // Routes
+  {
+    'route-a': {
+      comp : 'component-a',
+      on: { emiterA: doSomething },
+    },
+
+    'route-b': {
+      comp : 'component-b',
+      hooks : { open: doSomething }
+    },
+
+    'route-c': {
+      comp : 'component-c',
+      on: { emiterC: doSomething },
+    }
+  },
+
+  // Doorman options
+  { optionA: value }
+
+)
+```
+
+The 'routes' are all the components that the doorman is allowed to _load_ and _unload_ inside the mount.
+
+Each route is comprised of the following :
+- `name` : a component name
+- (optional) `on: { emiterName: fn, ... }` : functions defined on the parent component that the child component can call (aka emiters, cd doc_COMPONENTS.md)
+- (optional) `hooks { open:..., close:... }` : functions that are called when the component is _loaded_ or _unloaded_ from the mount
+
+You can create as many doormen as you want inside a component (as of now nothing prevents you from defining two doormen on the same mount, but it is not a good idea).
+
 
 ## app
 
-The entry page is /app.html. It has a main empty *mount div* ```<div id='mount-main'></div>```
-which is handled and filled with content by /app.js.
+The entry page is /naive.html. It has a main empty *mount div* ```<div id='mount-main'></div>```
+which is handled and filled with content by /naive.js.
 
-/app.js serves as the entry point (and the scope) for all components
+/naive.js serves as the entry point (and the scope) for all components
 
 It is made of three main parts :
   - the Components Proxy
@@ -121,4 +166,4 @@ component =     // as represented inside a doorman
 
 ### Store
 
-cf doc_STORE.md
+cf doc_STORE[...].md

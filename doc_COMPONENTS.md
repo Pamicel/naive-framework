@@ -152,10 +152,125 @@ const dm = Doorman(
       hooks : { open: doStuff } // Like this
 
     }
+
   },
-  // Options
+
+  // Options (Optional)
   { history: 'hash' }
 )
 ```
 
 There are two outer hooks : *open* (which is called just after the inner open function) and *close* (which is called at the same time as its inner counterpart)
+
+## Communication between components
+
+Parents/children communication can be hard, but not for components.
+
+Because I believed it was cleaner, children are not scoped inside their parent component. There are instead systems in place that give a parent and a child the ability to trigger actions inside one another.
+
+### Emiters
+All components have a handle called `$emit` that lets them use a function that they expect the parent to give them (through `on: {...}` in the parent doorman).
+
+eg :
+```javascript
+'route-c': {
+  comp : 'component-c',
+  on: { emiterC: doSomething }
+}
+```
+Here `'component-c'` is expected to use `$emit('emiterC', arg1, arg2, ...)` somewhere in its script, so the parent component gives a function (`doSomething`) that corresponds to that action.
+
+This can make the child mutate something inside its parent or pass/access informations from its parent.
+
+### Passing data on component loads
+Say the parent has a doorman `dm` that features a route `routeX` that represents a component `componentX`. To load componentX inside the doorman's mount, the parent has to call `dm.load('routeX')`. If the parent wants to pass __data__ to the component, it can call `dm.load('routeX', data)`
+
+TLDR;
+```javascript
+// The parent component
+
+(function () {
+
+  const dm1 = Doorman(
+    $("#mount-abcd"),
+    'routeX': {
+      comp : 'componentX',
+    }
+  )
+
+  const open = () => {
+
+    /* do stuff */
+
+    dm1.load('routeX', {greet: 'hello'});
+    
+    /* do stuff */
+
+  }
+
+  return (open);
+})
+```
+
+```javascript
+// The child component
+
+(function () {
+
+  const open = (data) => {
+    // Every time the child is loaded, it will console "hello"
+    console.log(data.greet);
+  }
+
+  return (open);
+})
+```
+
+Passing data on load is a secondary way to pass functions to the child, which can prove useful.
+
+### Using the child's interface
+The compulsory function `open` (which you can actually call however you want, it just has to be the only thing returned by the component script) returns an object that is the argument passed to the `doorman.load` Promise response :
+
+IDUP; (I don't understand, Paul)
+```javascript
+// The child component
+
+(function () {
+
+  const open = (data) => {
+    return (data);
+  }
+
+  return (open);
+})
+```
+
+```javascript
+// The parent component
+
+(function () {
+
+  const dm1 = Doorman(
+    $("#mount-abcd"),
+    'routeX': {
+      comp : 'componentX',
+    }
+  )
+
+
+  const open = () => {
+
+    /* do stuff */
+
+    // Every time the child is loaded, this will console "hello"
+    dm1.load('routeX', {greet: 'hello'})
+      .then(interface => console.log(interface.greet));
+    
+    /* do stuff */
+
+  }
+
+  return (open);
+})
+```
+This rather useful parent child combo will print 'hello' to the console.
