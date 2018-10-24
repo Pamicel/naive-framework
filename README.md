@@ -1,6 +1,6 @@
-# The most naive framework
+# The not so naive framework
 
-# ⚠️  I am currently building this small documentation ⚠️
+# ⚠️  Documentation in progress ⚠️
 
 ## What is a doorman
 
