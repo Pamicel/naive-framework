@@ -1,5 +1,7 @@
 # The most naive framework
 
+# ⚠️  Documentation in progress ⚠️
+
 ## app
 
 The entry page is /app.html. It has a main empty *mount div* ```<div id='mount-main'></div>```
@@ -65,6 +67,53 @@ The Components Proxy is the service that fetches the components for the app (and
   - unload
   - restrict
   - preload
+
+#### The way the Doorman represents data
+
+```javascript
+routes =        // All the routes
+{
+    routeName : {
+        comp : 'componentName',                     // required
+        on : { emiterName : emiterFunction, ... },  // optional
+        opt : { stuff: thing },                     // optional
+        hooks : {                                   // optional
+          open : function () { /* Do stuff */ }
+        }
+    }
+    // ...
+}
+
+rawComponent =  // component as sent by the server
+{
+    name : String,
+    template : htmlString,      // Valid HTML representation of a component
+    script : javascriptString,  // Valid component script
+    restricted : Boolean
+}
+
+componentInstance =
+{
+    dom : DOMNode,       // dom structure parsed from the component's template
+    logic : Object,      // result of the component's script after it was evaled
+    restricted : Boolean
+}
+
+routeInfo =
+{
+    route : 'routeName',
+    ...routes[routeName]
+}
+
+component =     // as represented inside a doorman
+{
+    ...routeInfo,
+    ...rawComponent,
+    ...componentInstance,
+    interface : Object // returned by the components initializer
+}
+```
+
 
 ### Router
 
