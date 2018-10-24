@@ -1,4 +1,4 @@
-# camagru
+# The most naive framework
 
 ## app
 
