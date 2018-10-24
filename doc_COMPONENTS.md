@@ -1,6 +1,6 @@
 # Components
 
-## What is a component
+## What is a component in the naive framework
 
 A component is essentialy a __template__ and a __script__.
 
