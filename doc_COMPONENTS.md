@@ -1,6 +1,6 @@
 # Components reference
 
-## Component structure
+## What is a component
 
 A typical components folder is as such
 ```
@@ -26,12 +26,11 @@ components
     ├── script.js
     └── template.html
 ```
+__\_\_main\_\___ is compulsory and __404__ is recommended
 
 ### template.html
 
-Every template is a simple html markdown, no specific constrains
-
-When sent to the client, the template of component found in a dir with name *compName* is encapsulated in
+Every template is a simple html markdown, that must be encapsulated in
 ```html
 <div class='component' name='compName'>
   <!-- content of template.html -->
