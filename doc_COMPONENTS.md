@@ -32,7 +32,7 @@ Every component has to have a __template__ and a __script__.
 
 It is exepected by the framework that the backend respect this static discipline :
 
-A POST request at '/comp' as such : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error if the component is not found, or a component as follows :
+A POST request at '/comp' like this one : `curl -d '{"name": "componentName"}' -H "Content-Type: application/json" -X POST /comp` should yield either an error if the component is not found, or a component as follows :
 
 ```JSON
   {
