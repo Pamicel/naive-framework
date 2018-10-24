@@ -68,7 +68,11 @@ The component has action triggers when opened and other action triggers when clo
 
 ### <a name="inhook"></a>Inner hooks
 
-The **open** function present in all components is the mother of all inner hooks, other inner hooks are added to the **$hooks** object from inside the component, like this :
+Inner hooks are defined **from inside the component**
+
+The **open** function present in all components is the primary inner hook **it is called when the component is mounted**.
+
+The other inner hook is **close**, it is called **just before the component is ejected from the mount** and is added to the **$hooks** object from inside the component like this :
 
 ```javascript
 (function () {
@@ -106,13 +110,11 @@ or like this :
 })
 ```
 
-The only inner hook that can be added at the time of writing is the **close** hook : it is called **just before the component is ejected from the mount**.
-
 **NB** : the definition of a $hooks.open function is ignored by design.
 
 ### Outer hooks
 
-**Outer hooks** are added to "hooks" in the route object, like so :
+**Outer hooks** are added to "hooks" in the route object, like this :
 
 ```javascript
 const dm = Doorman(
@@ -150,7 +152,7 @@ const dm = Doorman(
 )
 ```
 
-There are two outer hooks : *open* (which is called just after the inner open function) and *close* (which is called at the same time as its inner counterpart)
+There are two outer hooks : **open** (which is called just after the inner open function) and **close** (which is called at the same time as its inner counterpart)
 
 ## Communication between components
 
