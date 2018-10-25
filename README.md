@@ -1,6 +1,9 @@
 # The not so naive framework
 
 # ⚠️  Documentation in progress ⚠️
+The objective of this project was to make the most declarative, simple to use, boiler plate I could to build a project I had to do for school. The project was to build a very dull _"Instagram-like"_ app. It was meant to be mostly PHP (pure PHP, no frameworks or libraries), and the front end was to be pure Vanilla, HTML and CSS (and it had to be compatible with at least Chrome 41 and Firefox 46, which is probably just an arbitrary constrain).
+
+I don't like PHP that much, don't read me as a Javascript diehard, but I believe PHP (pure PHP with no framework or library that is) enforces concepts that are pretty antiquated, I am learning web development and I did not feel like spending my learning time on that.  Moreover I had stumbled on Vue a few months earlier for a personnal project, and the clarity and simplicity Vue really stuck me. I essentially wanted to see how far I could go, with my understanding of JS, into building something that, even if it would likely take more time to build, would _in fine_ simplify the development of the app.
 
 ## What is a doorman
 

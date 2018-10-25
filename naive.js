@@ -245,28 +245,24 @@ const app = (function () {
   const ComponentsProxy = (function() {
     const collection = {};
 
-    function createComponentFetcher (name) {
-      const fetcher = function () {
-        return (
-          fetch('/comp', {
-            body: JSON.stringify({ name }),
-            method: 'POST',
-            credentials: 'same-origin',
-            headers: {'Content-Type': 'application/json'}
-          })
-          .then((res) => res.json())
-          .catch(() => Promise.reject("Problème lors de la connection au server"))
-          .then((res) => res.info.component)
-        );
-      }
-      return (fetcher);
+    function fetchComponent (name) {
+      return (
+        fetch('/comp', {
+          body: JSON.stringify({ name }),
+          method: 'POST',
+          credentials: 'same-origin',
+          headers: {'Content-Type': 'application/json'}
+        })
+        .then((res) => res.json())
+        .catch(() => Promise.reject("Problème lors de la connection au server"))
+        .then((res) => res.info.component)
+      );
     }
 
     function getComponent (name) {
       if (!contains(name)) {
-        const fetchComponent = createComponentFetcher(name);
         return (
-          fetchComponent()
+          fetchComponent(name)
           .then(function (content) {
             var component = createComponent(content);
             // Memoize the component only if it bears the correct name
@@ -422,7 +418,7 @@ const app = (function () {
     // Just realised fat arrow functions came out before Chrome 46 and FF 41 !
     const resolveSpawn = (iface) => Promise.resolve(Object.assign({ interface: iface }, component));
 
-    // Components which opening is asynchronous are handle, BUT, thanks to
+    // Components which opening is asynchronous are handled, BUT, thanks to
     // this below, you don't have to put a dummy Promise in all your components
     if (openResult instanceof Promise)
       return (openResult.then(resolveSpawn));
@@ -450,7 +446,7 @@ const app = (function () {
 
     // Validity check
     for (var key in routes) {
-      if (!routes[key].comp)
+      if (!routes[key].comp || typeof routes[key].comp !== 'string')
         throw (new Error("Some routes don't specify a component name in 'comp'"));
     }
 
