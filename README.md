@@ -1,6 +1,5 @@
 # The not so naive framework
 
-# ⚠️  Documentation in progress ⚠️
 The objective of this project was to make the most declarative, simple to use, boiler plate **I could** to build a project I had to do for school.
 
 The project consisted of building a light _"Instagram-like"_ app. I was meant to use PHP (pure PHP, no frameworks or libraries), and the front end was to be pure Vanilla, HTML and CSS, and it had to be compatible with at least Chrome 41 and Firefox 46 (which is probably just an arbitrary constrain).
@@ -10,7 +9,8 @@ I don't like PHP that much, don't read me as a Javascript diehard, but I believe
 I essentially wanted to see how far I could go, with my basic understanding of JS, into building something that, even if it took more time to build, would _in fine_ simplify the development of the app.
 
 
-#...
+# ...
+# ⚠️  Documentation in progress ⚠️
 
 ## What is a doorman
 
