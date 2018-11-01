@@ -1,0 +1,32 @@
+{
+  "name": "naive-framework",
+  "version": "0.0.0",
+  "description": "A naive take on the front-end framework",
+  "main": "naive.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "transpile": "npx babel naive.js -o naive.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Pamicel/naive-framework.git"
+  },
+  "keywords": [
+    "naive",
+    "framework",
+    "javascript",
+    "front"
+  ],
+  "author": "pamicel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pamicel/naive-framework/issues"
+  },
+  "homepage": "https://github.com/Pamicel/naive-framework#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-preset-minify": "^0.5.0"
+  }
+}

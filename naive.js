@@ -369,7 +369,7 @@ const app = (function () {
     const $name = component.name;
     const $options = component.opt;
     const $emit = createEmiters(component.on);
-    const $hooks = {};
+    const $life = {};
     const $alert = displayAlert;
     const $router = appInterface.router;
     const $store = Store.create(dom);
@@ -377,7 +377,7 @@ const app = (function () {
     const $open = eval(component.script)();
 
     // Return for later use by the doorman
-    return ({open: $open, hooks: $hooks});
+    return ({open: $open, life: $life});
 
   });
 
@@ -490,16 +490,16 @@ const app = (function () {
         // Delete the storefront
         Store.remove(component.dom);
 
-        // Trigger the outter close hooks
-        if (component.hooks && component.hooks.close) {
-          if (typeof component.hooks.close === 'function') component.hooks.close();
-          else if (component.hooks.close instanceof Array) component.hooks.close.map((fn) => { if (typeof fn === 'function') fn(); });
+        // Trigger the outter life.close
+        if (component.life && component.life.close) {
+          if (typeof component.life.close === 'function') component.life.close();
+          else if (component.life.close instanceof Array) component.life.close.map((fn) => { if (typeof fn === 'function') fn(); });
         }
 
-        // Trigger the inner close hooks
-        if (component.logic && component.logic.hooks && component.logic.hooks.close) {
-          if (typeof component.logic.hooks.close === 'function') component.logic.hooks.close();
-          else if (component.logic.hooks.close instanceof Array) component.logic.hooks.close.map((fn) => { if (typeof fn === 'function') fn(); });
+        // Trigger the inner life.close
+        if (component.logic && component.logic.life && component.logic.life.close) {
+          if (typeof component.logic.life.close === 'function') component.logic.life.close();
+          else if (component.logic.life.close instanceof Array) component.logic.life.close.map((fn) => { if (typeof fn === 'function') fn(); });
         }
 
       }
@@ -524,7 +524,7 @@ const app = (function () {
         })
         .then(component => {
           // Additionnal 'open' outer hook
-          var outerHooks = component.hooks;
+          var outerHooks = component.life;
           if (outerHooks && outerHooks.open) outerHooks.open();
 
           updateCurrent(component);
