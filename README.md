@@ -7,8 +7,9 @@ Here is the backstory
 At school 42 there's a web project called Camagru, that involves building an _"Instagram-like"_ app. During this project, the student is prohibited from using __ANY__ framework or library of any kind. The backend must be in PHP and both __the back end and the front end must be strictly and fully built from scratch by the student using only the native form and capabilities of PHP, JS, HTML and CSS__. The finished product has to be compatible with at least Chrome 41 and Firefox 46.
 
 _But where is the PHP @pamicel ?_<br>
-You will not find any PHP here, this is a front end framework, fully in JS, here is the deal :
+You will not find any PHP here, this is not my Camagru (which you can see and use [camagru.pamicel.com](https://camagru.pamicel.com/), only the front end tool I built to help build it.
 
+<br><br>
 Two things :
 
 First I don't like PHP that much, don't read me as a Javascript diehard, but I believe PHP (the PHP I know at least, ie pure PHP with no frameworks nor libraries) is pretty inelegant in many ways and enforces concepts that are quite antiquated. Said an other way, I want to learn how to build architectures for the web and I do not feel like spending this learning time on PHP.
