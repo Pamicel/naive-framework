@@ -6,17 +6,18 @@ Here is the backstory
 
 At school 42 there's a web project called Camagru, that involves building an _"Instagram-like"_ app. During this project, the student is prohibited from using __ANY__ framework or library of any kind. The backend must be in PHP and both __the back end and the front end must be strictly and fully built from scratch by the student using only the native form and capabilities of PHP, JS, HTML and CSS__. The finished product has to be compatible with at least Chrome 41 and Firefox 46.
 
-_But where is the PHP @pamicel ?_<br>
+## _But where is the PHP @pamicel ?_
 You will not find any PHP here, this is not my Camagru (which you can see and use [camagru.pamicel.com](https://camagru.pamicel.com/), only the front end tool I built to help build it.
 
-<br><br>
-Two things :
+## _But then what the hell is this @pamicel ?_ Motivations :
 
-First I don't like PHP that much, don't read me as a Javascript diehard, but I believe PHP (the PHP I know at least, ie pure PHP with no frameworks nor libraries) is pretty inelegant in many ways and enforces concepts that are quite antiquated. Said an other way, I want to learn how to build architectures for the web and I do not feel like spending this learning time on PHP.
+I have to admit something, I don't like PHP that much, don't read me as a Javascript diehard, but I find PHP pretty inelegant and I think it enforces concepts that are quite antiquated (of course I am talking about the PHP I know, ie pure PHP with no frameworks or libraries). Said an other way, what I want to learn is how to build architectures for the web and I do not feel like spending this learning time on PHP, sorry.
 
-Secondly, the subject for Camagru reads the following : "No Framework, Micro-Framework or librairy __that is not of your own design__ is authorized." (originally in french : "Aucun Framework, Micro-Framework ou librairie qui n’est pas de votre conception n’est autorisée."). It is anyone's guess what a _"Micro-Framework"_ is... Anyhow, I took that as a challenge.
+I found an other motivation in the subject for Camagru. The subject reads the following : "No Framework, Micro-Framework or library __that is not of your own design__ is authorized." (originally in french : "Aucun Framework, Micro-Framework ou librairie qui n’est pas de votre conception n’est autorisée."). It is anyone's guess what a _"Micro-Framework"_ is... Anyhow, I took that as a challenge.
 
-So my plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a complex frontend software that would utilise it.
+## The plan
+
+So my plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a more complex frontend software that would utilise it.
 
 As I had made a project in VueJS a year before and fallen in love with how rewarding the experience was, I set out to emulate some concepts of it, to the extent of my n00bish capabilities.
 
