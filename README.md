@@ -13,15 +13,17 @@ You will not find any PHP here, this is not my Camagru (which you can see and us
 
 The subject for Camagru reads the following : "No Framework, Micro-Framework or library __that is not of your own design__ is authorized." (originally in french : "Aucun Framework, Micro-Framework ou librairie qui n’est pas de votre conception n’est autorisée."). It is anyone's guess what a _"Micro-Framework"_ is... Anyhow, I took that as a challenge.
 
-I have to admit something, I don't like PHP that much, it is partly a subjective thing, I find PHP pretty inelegant and I think it enforces concepts that are quite antiquated. I guess many extensions to PHP solve this, but that was not a comforting thought for me in this context. On the other hand I really like Javascript, mostly naked Javascript.
+I have to admit something, I don't like PHP that much, it is partly a subjective thing, I find PHP pretty inelegant and I think it enforces concepts that are quite antiquated. I guess many extensions to PHP solve this, but that was not a comforting thought for me in this context.
 
 Said an other way, I want to learn how to build architectures for the web and when I started this project I did not feel like spending this learning time on PHP.
 
 So I was set to build a "framework", but definitely a frontend one.
 
+On the other hand I really like Javascript, mostly naked Javascript.
+
 My plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a more complex frontend software that would utilize it.
 
-As I had used VueJS for a personnal project a year before and had a fond memory of how rewarding the experience was, I set out to emulate some concepts of it, to the extent of my n00bish capabilities.
+As I had used VueJS for a personnal project a year before and had a fond memory of how rewarding the experience was, I set out to emulate some concepts taken from there (to the extent of my n00bish capabilities).
 
 I added a difficulty (apparently I felt masochistic) by restricting myself to extremely basic tooling (no bundlers and no transpilers) so that my correctors would not have a chance to challenge me on not playing by the rules.
 
