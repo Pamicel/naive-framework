@@ -19,9 +19,7 @@ Said an other way, I want to learn how to build architectures for the web and wh
 
 So I was set to build a "framework", but definitely a frontend one.
 
-## The plan
-
-So my plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a more complex frontend software that would utilize it.
+My plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a more complex frontend software that would utilize it.
 
 As I had used VueJS for a personnal project a year before and had a fond memory of how rewarding the experience was, I set out to emulate some concepts of it, to the extent of my n00bish capabilities.
 
