@@ -1,6 +1,6 @@
 # The Camagru front end framework
 
-Disclaimer : this is a very egoistic project, this is not solving anything for anyone but me.
+Disclaimer : this is a very egoistic project that is not solving anything for anyone but me.
 
 Here is the backstory
 
