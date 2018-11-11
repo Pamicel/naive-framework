@@ -25,7 +25,7 @@ My plan was to build the simplest Restful API in PHP (to minimise my PHP footpri
 
 As I had used VueJS for a personnal project a year before and had a fond memory of how rewarding the experience was, I set out to emulate some concepts taken from there (to the extent of my n00bish capabilities).
 
-I added a difficulty (apparently I felt masochistic) by restricting myself to extremely basic tooling (no bundlers and no transpilers) so that my correctors would not have a chance to challenge me on not playing by the rules.
+<strike>I added a difficulty (apparently I felt masochistic) by restricting myself to extremely basic tooling (no bundlers and no transpilers) so that my correctors would not have a chance to challenge me on not playing by the rules.</strike> I did until my correction but now I am in the process of adding a Webpack pipeline.
 
 # Naive framework features
 
