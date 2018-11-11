@@ -17,9 +17,9 @@ I have to admit something, I don't like PHP that much, it is partly a subjective
 
 Said an other way, I want to learn how to build architectures for the web and when I started this project I did not feel like spending this learning time on PHP.
 
-So I was set to build a "framework", but definitely a frontend one.
-
 On the other hand I really like Javascript, mostly naked Javascript.
+
+So I was set to build a "framework", but definitely a frontend one.
 
 My plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a more complex frontend software that would utilize it.
 
