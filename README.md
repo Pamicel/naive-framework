@@ -13,7 +13,7 @@ Two things :
 
 First I don't like PHP that much, don't read me as a Javascript diehard, but I believe PHP (the PHP I know at least, ie pure PHP with no frameworks nor libraries) is pretty inelegant in many ways and enforces concepts that are quite antiquated. Said an other way, I want to learn how to build architectures for the web and I do not feel like spending this learning time on PHP.
 
-Secondly, the subject for Camagru reads the following : "No Framework, Micro-Framework or librairy __that is not of your own design__ is prohibited." (originally in french : "Aucun Framework, Micro-Framework ou librairie qui n’est pas de votre conception n’est autorisée."). It is anyone's guess what a _"Micro-Framework"_ is... Anyhow, I took that as a challenge.
+Secondly, the subject for Camagru reads the following : "No Framework, Micro-Framework or librairy __that is not of your own design__ is authorized." (originally in french : "Aucun Framework, Micro-Framework ou librairie qui n’est pas de votre conception n’est autorisée."). It is anyone's guess what a _"Micro-Framework"_ is... Anyhow, I took that as a challenge.
 
 So my plan was to build the simplest Restful API in PHP (to minimise my PHP footprint) and a complex frontend software that would utilise it.
 
