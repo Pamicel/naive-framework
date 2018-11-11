@@ -1,3 +1,5 @@
+![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
+
 # The Camagru front end framework
 
 Disclaimer : this is a very egoistic project that is not solving anything for anyone but me.
