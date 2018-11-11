@@ -12,7 +12,7 @@ I essentially wanted to see how far I could go, with my basic understanding of J
 # Naive framework features
 
 ## A store
-[doc](doc_STORE_how_the_store_works.md)
+[doc](doc_STORE_how-the-store-works.md)
 
 ## A router
 documentation in progress
@@ -21,7 +21,7 @@ documentation in progress
 [doc](doc_COMPONENTS.md)
 
 ## A built-in client 'alert' system
-[doc](doc_ALERTS_how_alerts_work.md)
+[doc](doc_ALERTS_how-alerts-work.md)
 
 
 # The overall usage of the naive framework

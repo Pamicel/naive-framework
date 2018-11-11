@@ -58,7 +58,7 @@ Each component has access, inside of its script, to this set of handles :
   - `$options` : The options associated with the component's route
   - `$emit` : The [emiters](#emiters)
   - `$hooks` : The object on which the component can define its own [inner hooks](#inhook)
-  - `$alert` : The handle for [alerts](doc_ALERTS_how_alerts_work.md)
+  - `$alert` : The handle for [alerts](doc_ALERTS_how-alerts-work.md)
   - `$router` : The access to the router (if there is one)
   - `$store` : The component's own access to the [store](doc_STORE_how-the-store-works.md)
 
